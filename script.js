@@ -42,7 +42,7 @@ while(j <= m){
 }
 console.log(fact2)
 
-let x=5;
+let x=9;
 let temp = 0;
 let f1 = 1;
 let f2 = 1;
@@ -52,3 +52,27 @@ for(let k=1; k<x; k++){
     f2 = temp;
 }
 console.log(f1)
+
+let prime = 17;
+let isPrime = true;
+for(let l=2; l<prime; l++){
+    if(prime%l == 0){
+        isPrime = false;
+        break;
+    }
+}
+console.log(isPrime);
+
+prime = 59
+for(i=2; i<=prime; i++){
+    isPrime = 1;
+    for(let l=2; l<i; l++){
+        if(i%l == 0){
+            isPrime = 0;
+            break;
+        }
+    }
+    if(isPrime != 0){
+        console.log(i)
+    }
+}
