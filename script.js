@@ -41,3 +41,14 @@ while(j <= m){
     j++;
 }
 console.log(fact2)
+
+let x=5;
+let temp = 0;
+let f1 = 1;
+let f2 = 1;
+for(let k=1; k<x; k++){
+    temp = f1+f2;
+    f1 = f2
+    f2 = temp;
+}
+console.log(f1)
