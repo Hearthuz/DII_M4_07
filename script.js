@@ -25,3 +25,19 @@ else{
     tax = 0
 }
 console.log(tax)
+
+let n=5;
+let fact=1;
+for(let i=1; i <= n; i++){
+    fact = fact*i;
+}
+console.log(fact)
+
+let j=1;
+let m=5;
+let fact2=1;
+while(j <= m){
+    fact2 = fact2 * j;
+    j++;
+}
+console.log(fact2)
