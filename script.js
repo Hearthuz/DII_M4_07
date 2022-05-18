@@ -42,45 +42,56 @@ object[4] = {
     'age' : 22,
     'salary': 20500,
 }
-let totalSalary = 0;
-for(i=0; i<object.length; i++){
-    totalSalary += object[i].salary
+function findSum(array, key){
+    let sum = 0;
+    for(i=0; i<array.length; i++){
+        sum += array[i][key]
+    }
+    return sum;
 }
-let totalAge = 0;
-for(i=0; i<object.length; i++){
-    totalAge += object[i].age;
+function findAvg(array, key){
+    sum = findSum(array, key);
+    avg = sum/array.length;
+    return avg;
 }
-let ageAverage = totalAge/object.length;
-let totalTax = 0;
-for(i=0; i<object.length; i++){
-    let income = object[i].salary*12;
-    if(income > 5000000){
-        tax = ((income - 5000000)*0.35)+1265000
+function findTax(array, key){
+    let totalTax = 0;
+    let tax;
+    for(i=0; i<array.length; i++){
+        let income = array[i][key]*12;
+       if(income > 5000000){
+            tax = ((income - 5000000)*0.35)+1265000
+        }
+        else if (income > 2000000) {    
+            tax = ((income - 2000000)*0.30)+365000
+        }
+        else if(income > 1000000){
+            tax = ((income - 1000000)*0.25)+115000
+        }
+        else if (income > 750000) {    
+            tax = ((income - 750000)*0.20)+65000
+        }
+        else if (income > 500000) {    
+            tax = ((income - 500000)*0.15)+27500
+        }
+        else if (income > 300000) {    
+            tax = ((income - 300000)*0.10)+7500
+        }
+        else if (income > 150000) {    
+            tax = ((income - 150000)*0.05)
+        }
+        else{
+            tax = 0
+        }
+        totalTax += tax;
     }
-    else if (income > 2000000) {    
-        tax = ((income - 2000000)*0.30)+365000
-    }
-    else if(income > 1000000){
-        tax = ((income - 1000000)*0.25)+115000
-    }
-    else if (income > 750000) {    
-        tax = ((income - 750000)*0.20)+65000
-    }
-    else if (income > 500000) {    
-        tax = ((income - 500000)*0.15)+27500
-    }
-    else if (income > 300000) {    
-        tax = ((income - 300000)*0.10)+7500
-    }
-    else if (income > 150000) {    
-        tax = ((income - 150000)*0.05)
-    }
-    else{
-        tax = 0
-    }
-    totalTax += tax;
+    let taxAvg = totalTax/array.length
+    return taxAvg;
 }
-let taxAverage = totalTax/object.length;
+let totalSalary = findSum(object, 'salary')
+let ageAverage = findAvg(object, 'age')
+let taxAverage = findTax(object, 'salary')
+
 console.log('Total salary : '+totalSalary)
 console.log('Age average : '+ageAverage)
-console.log('Tax average : '+taxAverage)
+console.log('Tax average : '+taxAverage) 
