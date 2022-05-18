@@ -46,13 +46,11 @@ let totalSalary = 0;
 for(i=0; i<object.length; i++){
     totalSalary += object[i].salary
 }
-console.log(totalSalary)
 let totalAge = 0;
 for(i=0; i<object.length; i++){
     totalAge += object[i].age;
 }
 let ageAverage = totalAge/object.length;
-console.log(ageAverage)
 let totalTax = 0;
 for(i=0; i<object.length; i++){
     let income = object[i].salary*12;
@@ -83,4 +81,6 @@ for(i=0; i<object.length; i++){
     totalTax += tax;
 }
 let taxAverage = totalTax/object.length;
-console.log(taxAverage)
+console.log('Total salary : '+totalSalary)
+console.log('Age average : '+ageAverage)
+console.log('Tax average : '+taxAverage)
