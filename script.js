@@ -1,78 +1,86 @@
-let income=999999;
-let tax;
-if(income > 5000000){
-    tax = ((income - 5000000)*0.35)+1265000
+let place = [3]
+place[0] = {
+    'name': 'chaing mai university',
+    'lat': 18.8046735,
+    'long': 98.9528446,
 }
-else if (income > 2000000) {    
-    tax = ((income - 2000000)*0.30)+365000
+place[1] = {
+    'name': 'maya',
+    'lat': 18.8047037,
+    'long': 98.9440898,
 }
-else if(income > 1000000){
-    tax = ((income - 1000000)*0.25)+115000
+place[2] = {
+    'name': 'central chaing mai',
+    'lat': 18.8048018,
+    'long': 98.917825,
 }
-else if (income > 750000) {    
-    tax = ((income - 750000)*0.20)+65000
-}
-else if (income > 500000) {    
-    tax = ((income - 500000)*0.15)+27500
-}
-else if (income > 300000) {    
-    tax = ((income - 300000)*0.10)+7500
-}
-else if (income > 150000) {    
-    tax = ((income - 150000)*0.05)
-}
-else{
-    tax = 0
-}
-console.log(tax)
+console.log(place[1])
 
-let n=5;
-let fact=1;
-for(let i=1; i <= n; i++){
-    fact = fact*i;
+let object = [5]
+object[0] = {
+    'name' : 'นาย ก นามสมมติ',
+    'age' : 68,
+    'salary': 75900,
 }
-console.log(fact)
-
-let j=1;
-let m=5;
-let fact2=1;
-while(j <= m){
-    fact2 = fact2 * j;
-    j++;
+object[1] = {
+    'name' : 'นางสาว ข นามสมมติ',
+    'age' : 35,
+    'salary': 55400,
 }
-console.log(fact2)
-
-let x=9;
-let temp = 0;
-let f1 = 1;
-let f2 = 1;
-for(let k=1; k<x; k++){
-    temp = f1+f2;
-    f1 = f2
-    f2 = temp;
+object[2] = {
+    'name' : 'นาย ค นามสมมติ',
+    'age' : 51,
+    'salary': 81000,
 }
-console.log(f1)
-
-let prime = 17;
-let isPrime = true;
-for(let l=2; l<prime; l++){
-    if(prime%l == 0){
-        isPrime = false;
-        break;
+object[3] = {
+    'name' : 'นาง ง นามสมมติ',
+    'age' : 76,
+    'salary': 111000,
+}
+object[4] = {
+    'name' : 'นางสาว จ นามสมมติ',
+    'age' : 22,
+    'salary': 20500,
+}
+let totalSalary = 0;
+for(i=0; i<object.length; i++){
+    totalSalary += object[i].salary
+}
+console.log(totalSalary)
+let totalAge = 0;
+for(i=0; i<object.length; i++){
+    totalAge += object[i].age;
+}
+let ageAverage = totalAge/object.length;
+console.log(ageAverage)
+let totalTax = 0;
+for(i=0; i<object.length; i++){
+    let income = object[i].salary*12;
+    if(income > 5000000){
+        tax = ((income - 5000000)*0.35)+1265000
     }
-}
-console.log(isPrime);
-
-prime = 59
-for(i=2; i<=prime; i++){
-    isPrime = 1;
-    for(let l=2; l<i; l++){
-        if(i%l == 0){
-            isPrime = 0;
-            break;
-        }
+    else if (income > 2000000) {    
+        tax = ((income - 2000000)*0.30)+365000
     }
-    if(isPrime != 0){
-        console.log(i)
+    else if(income > 1000000){
+        tax = ((income - 1000000)*0.25)+115000
     }
+    else if (income > 750000) {    
+        tax = ((income - 750000)*0.20)+65000
+    }
+    else if (income > 500000) {    
+        tax = ((income - 500000)*0.15)+27500
+    }
+    else if (income > 300000) {    
+        tax = ((income - 300000)*0.10)+7500
+    }
+    else if (income > 150000) {    
+        tax = ((income - 150000)*0.05)
+    }
+    else{
+        tax = 0
+    }
+    totalTax += tax;
 }
+let taxAverage = totalTax/object.length;
+console.log(taxAverage)
