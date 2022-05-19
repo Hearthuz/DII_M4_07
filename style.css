@@ -25,3 +25,9 @@
     color: white;
     border: 2px solid darkgoldenrod;
 }
+.toggleOn {
+    background-color: white;    
+}
+.toggleOff {
+    background-color: lightgray;
+}
